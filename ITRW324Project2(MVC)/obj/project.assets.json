@@ -13711,11 +13711,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cortex\\Desktop\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
+      "projectUniqueName": "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
       "projectName": "ITRW324Project2(MVC)",
-      "projectPath": "C:\\Users\\Cortex\\Desktop\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
+      "projectPath": "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
       "packagesPath": "C:\\Users\\Cortex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cortex\\Desktop\\ITRW324Project2(MVC)\\obj\\",
+      "outputPath": "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
