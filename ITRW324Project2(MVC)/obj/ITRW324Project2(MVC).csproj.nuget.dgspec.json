@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj": {}
+    "C:\\Users\\jeandre\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj": {
+    "C:\\Users\\jeandre\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
+        "projectUniqueName": "C:\\Users\\jeandre\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
         "projectName": "ITRW324Project2(MVC)",
-        "projectPath": "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
-        "packagesPath": "C:\\Users\\Cortex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
+        "projectPath": "C:\\Users\\jeandre\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
+        "packagesPath": "C:\\Users\\jeandre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jeandre\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Cortex\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\jeandre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"

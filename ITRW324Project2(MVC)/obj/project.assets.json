@@ -5026,10 +5026,10 @@
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "EntityFramework.6.2.0.nupkg.sha512",
-        "EntityFramework.nuspec",
         "content/net40/App.config.transform",
         "content/net40/Web.config.transform",
+        "entityframework.6.2.0.nupkg.sha512",
+        "entityframework.nuspec",
         "lib/net40/EntityFramework.SqlServer.dll",
         "lib/net40/EntityFramework.SqlServer.xml",
         "lib/net40/EntityFramework.dll",
@@ -7812,6 +7812,7 @@
       "path": "microsoft.netcore.targets/2.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
@@ -9468,6 +9469,7 @@
       "path": "system.diagnostics.contracts/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13704,27 +13706,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Cortex\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\jeandre\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
+      "projectUniqueName": "C:\\Users\\jeandre\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
       "projectName": "ITRW324Project2(MVC)",
-      "projectPath": "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
-      "packagesPath": "C:\\Users\\Cortex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cortex\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
+      "projectPath": "C:\\Users\\jeandre\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\ITRW324Project2(MVC).csproj",
+      "packagesPath": "C:\\Users\\jeandre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jeandre\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Cortex\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\jeandre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

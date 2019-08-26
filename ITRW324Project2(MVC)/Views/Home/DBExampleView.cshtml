@@ -3,38 +3,39 @@
     ViewData["Title"] = "Example of a view connected to a DB";
 }
 
-<div class="text-center">
-    <h1>ASP.NET CORE - MySQL - Entity Framework </h1>
-    <div>&nbsp;</div>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">UserID</th>
-                <th scope="col">UserFirstName</th>
-                <th scope="col">UserLastName</th>
-                <th scope="col">UserPhoneNumber</th>
-                <th scope="col">UserGender</th>
-                <th scope="col">UserMemberSince</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model != null)
-            {
-                if (Model.Count() > 0)
+    <div class="text-center">
+        <h1>&nbsp</h1>
+        <h1>ASP.NET CORE - MySQL - Entity Framework </h1>
+        <div>&nbsp;</div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">UserID</th>
+                    <th scope="col">UserFirstName</th>
+                    <th scope="col">UserLastName</th>
+                    <th scope="col">UserPhoneNumber</th>
+                    <th scope="col">UserGender</th>
+                    <th scope="col">UserMemberSince</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
                 {
-                    foreach (var item in Model)
+                    if (Model.Count() > 0)
                     {
-                        <tr>
-                            <td>@item.UserId</td>
-                            <td>@item.UserFirstName</td>
-                            <td>@item.UserLastName</td>
-                            <td>@item.UserPhoneNum</td>
-                            <td>@item.UserGender</td>
-                            <td>@item.UserMemberSince</td>
-                        </tr>
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.UserId</td>
+                                <td>@item.UserFirstName</td>
+                                <td>@item.UserLastName</td>
+                                <td>@item.UserPhoneNum</td>
+                                <td>@item.UserGender</td>
+                                <td>@item.UserMemberSince</td>
+                            </tr>
+                        }
                     }
                 }
-            }
-        </tbody>
-    </table>
-</div>
+            </tbody>
+        </table>
+    </div>
