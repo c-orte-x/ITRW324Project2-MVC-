@@ -33,7 +33,7 @@ namespace ITRW324Project2_MVC_
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddMvc().AddRazorPagesOptions(options => options.AllowAreas = true);
+
 
             services.AddDbContext<ITRW324Project2Context>(options => options.UseMySQL(connectionString));
 
@@ -63,9 +63,7 @@ namespace ITRW324Project2_MVC_
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=AboutUs}/{id?}");
+             
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=DBExampleView}/{id?}"); //Route for linking Models,View, Controllers

@@ -41,14 +41,20 @@ html {
   min-height: 100%;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
   /* Margin bottom by footer height */
-  overflow: auto;
-  padding-bottom: 60px;
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
 }
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 100px;
+    background-color : aquamarine
 }
