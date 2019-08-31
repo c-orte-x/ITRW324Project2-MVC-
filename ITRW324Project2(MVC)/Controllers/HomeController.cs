@@ -37,6 +37,11 @@ namespace ITRW324Project2_MVC_.Controllers
             return View();
         }
 
+        public IActionResult Rates() //Retrun Rates View
+        {
+            return View();
+        }
+
         public IActionResult Booking() //Return Booking View
         {
             return View();

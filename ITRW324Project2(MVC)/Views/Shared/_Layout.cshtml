@@ -1,6 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
+    
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js" data-semver="2.1.4" data-require="jquery@2.1.4"></script>
+        <script data-require="jquery-cookie@1.3.1" data-semver="1.3.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.3.1/jquery.cookie.js"></script>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MSC Bookings</title>
@@ -17,6 +25,7 @@
     </environment>
 </head>
 <body>
+    <div id="wrapper">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -42,25 +51,24 @@
 
     <div class="container">
         @RenderBody()
-        <hr />
-        <footer style="text-align: center" >
+        <footer style="text-align: center">
             <p>&copy; 2019 - Mittal Squash Club</p>
-           
             <div>
                 <a style="padding-right: 50px" asp-controller="Home" asp-action="Booking">Rules</a>
-            
-                <a style="padding-right: 50px" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
-        
-                <a style="padding-right: 50px" asp-area="" asp-controller="Home" asp-action="Booking">Profile</a>
-          
-                <a style="padding-right: 50px" asp-area="" asp-controller="Home" asp-action="Booking">Contact Us</a>
-            
-                <a asp-area="" asp-controller="Home" asp-action="Booking">Prices</a>
-            </div>
-           
-        </footer>
-    </div>
 
+                <a style="padding-right: 50px" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+
+                <a style="padding-right: 50px" asp-area="" asp-controller="Home" asp-action="Booking">Profile</a>
+
+                <a style="padding-right: 50px" asp-area="" asp-controller="Home" asp-action="Booking">Contact Us</a>
+
+                <a style="padding-right: 50px" asp-area="" asp-controller="Home" asp-action="HoursRates">Hours & Rates</a>
+            </div>
+
+        </footer>
+
+    </div>
+    </div>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>

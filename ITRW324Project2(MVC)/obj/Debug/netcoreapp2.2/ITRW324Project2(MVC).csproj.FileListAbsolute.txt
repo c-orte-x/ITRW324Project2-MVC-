@@ -62,3 +62,4 @@ C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\net
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\ITRW324Project2(MVC).dll
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\ITRW324Project2(MVC).pdb
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\ITRW324Project2(MVC).csproj.CopyComplete
+C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Home\AboutUs.g.cshtml.cs
