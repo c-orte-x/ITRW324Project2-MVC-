@@ -57,6 +57,11 @@ namespace ITRW324Project2_MVC_.Controllers
             return View();
         }
 
+        public IActionResult ContactUs() //Return Contact Us View
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
