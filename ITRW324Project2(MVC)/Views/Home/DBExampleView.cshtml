@@ -1,4 +1,4 @@
-﻿@model List<ITRW324Project2_MVC_.User>
+﻿@model List<ITRW324Project2_MVC_.Booking>
 @{
     ViewData["Title"] = "Example of a view connected to a DB";
 }
@@ -9,12 +9,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">UserID</th>
-                <th scope="col">UserFirstName</th>
-                <th scope="col">UserLastName</th>
-                <th scope="col">UserPhoneNumber</th>
-                <th scope="col">UserGender</th>
-                <th scope="col">UserMemberSince</th>
+                <th scope="col">BookingFrom</th>
             </tr>
         </thead>
         <tbody>
@@ -24,14 +19,9 @@
                 {
                     foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@item.UserId</td>
-                            <td>@item.UserFirstName</td>
-                            <td>@item.UserLastName</td>
-                            <td>@item.UserPhoneNum</td>
-                            <td>@item.UserGender</td>
-                            <td>@item.UserMemberSince</td>
-                        </tr>
+            <tr>
+                        <td>@item.BookingFrom</td>
+            </tr>
                     }
                 }
             }

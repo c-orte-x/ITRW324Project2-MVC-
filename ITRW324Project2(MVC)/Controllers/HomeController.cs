@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Data;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,9 +19,9 @@ namespace ITRW324Project2_MVC_.Controllers
         {
             _context = context;
         }
-        public IActionResult DBExampleView() //Return User Table in DB to DBExampleView
+        public IActionResult DBExampleView() //Return Booking Table in DB to DBExampleView
         {
-            var result = _context.User.ToList();
+            var result = _context.Booking.ToList();
             return View(result);
         }
 
@@ -39,13 +40,15 @@ namespace ITRW324Project2_MVC_.Controllers
 
         public IActionResult Booking() //Return Booking View
         {
-            return View();
+            var result = _context.Booking.ToList();
+            return View(result);
         }
 
         public IActionResult Index() //Return Index View
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

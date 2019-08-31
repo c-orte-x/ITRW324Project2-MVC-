@@ -1,7 +1,11 @@
-﻿
+﻿@model List<ITRW324Project2_MVC_.Booking>
 @{
     ViewData["Title"] = "Booking";
 }
+@using MySql.Data.MySqlClient;
+@using Microsoft.EntityFrameworkCore;
+@using System.Data;
+
 <link href="~/css/Booking.css" rel="stylesheet" /> <!--References created booking css-->>
 <div class="text-center">
     <!--CENTERS EVERYTHING-->
@@ -42,71 +46,267 @@
 
     <table style="width:91%">
         <tr>
+            <!--1ST ROW-->>
             <td colspan="34">2019/08/14</td>
         </tr>
         <tr>
-            <td>06:00</td>
-            <td>06:30</td>
-            <td>07:00</td>
-            <td>07:30</td>
-            <td>08:00</td>
-            <td>08:30</td>
-            <td>09:00</td>
-            <td>09:30</td>
-            <td>10:00</td>
-            <td>10:30</td>
-            <td>11:00</td>
-            <td>11:30</td>
-            <td>12:00</td>
-            <td>12:30</td>
-            <td>13:00</td>
-            <td>13:30</td>
-            <td>14:00</td>
-            <td>14:30</td>
-            <td>15:00</td>
-            <td>15:30</td>
-            <td>16:00</td>
-            <td>16:30</td>
-            <td>17:00</td>
-            <td>17:30</td>
-            <td>18:00</td>
-            <td>18:30</td>
-            <td>19:00</td>
-            <td>19:30</td>
-            <td>20:00</td>
-            <td>20:30</td>
-            <td>21:00</td>
-            <td>21:30</td>
-            <td>22:00</td>
+            <!--2ND ROW-->
+            <td>06:00</td>  <!--COLUMN 1-->
+            <td>06:30</td>  <!--COLUMN 2-->
+            <td>07:00</td>  <!--COLUMN 3-->
+            <td>07:30</td>  <!--COLUMN 4-->
+            <td>08:00</td>  <!--COLUMN 5-->
+            <td>08:30</td>  <!--COLUMN 6-->
+            <td>09:00</td>  <!--COLUMN 7-->
+            <td>09:30</td>  <!--COLUMN 8-->
+            <td>10:00</td>  <!--COLUMN 9-->
+            <td>10:30</td>  <!--COLUMN 10-->
+            <td>11:00</td>  <!--COLUMN 11-->
+            <td>11:30</td>  <!--COLUMN 12-->
+            <td>12:00</td>  <!--COLUMN 13-->
+            <td>12:30</td>  <!--COLUMN 14-->
+            <td>13:00</td>  <!--COLUMN 15-->
+            <td>13:30</td>  <!--COLUMN 16-->
+            <td>14:00</td>  <!--COLUMN 17-->
+            <td>14:30</td>  <!--COLUMN 18-->
+            <td>15:00</td>  <!--COLUMN 19-->
+            <td>15:30</td>  <!--COLUMN 20-->
+            <td>16:00</td>  <!--COLUMN 21-->
+            <td>16:30</td>  <!--COLUMN 22-->
+            <td>17:00</td>  <!--COLUMN 23-->
+            <td>17:30</td>  <!--COLUMN 24-->
+            <td>18:00</td>  <!--COLUMN 25-->
+            <td>18:30</td>  <!--COLUMN 26-->
+            <td>19:00</td>  <!--COLUMN 27-->
+            <td>19:30</td>  <!--COLUMN 28-->
+            <td>20:00</td>  <!--COLUMN 29-->
+            <td>20:30</td>  <!--COLUMN 30-->
+            <td>21:00</td>  <!--COLUMN 31-->
+            <td>21:30</td>  <!--COLUMN 32-->
+            <td>22:00</td>  <!--COLUMN 33-->
         </tr>
         <tr>
-            <td>&nbsp</td>
+
+            @if (Model != null)
+            {
+                //MySqlConnection con;
+                //MySqlDataAdapter dbAdapter;
+                //string connectionString;
+                //connectionString = "Server=den1.mysql6.gear.host;Database=ITRW324Project2;Uid=itrw324project2;Pwd=Hr0T3_Bxx-rj;";
+                //con = new MySqlConnection(connectionString);
+                //con.Open();
+                //MySqlCommand cmd = new MySqlCommand("insert_new_booking", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@uBookingFrom", Convert.ToDateTime("2019-08-30 10:00:00"));
+                //cmd.Parameters.AddWithValue("@uBookingUntil", Convert.ToDateTime("2019-08-30 10:30:00"));
+                //cmd.Parameters.AddWithValue("@uBookingMadeBy", "Hugo");
+                //cmd.Parameters.AddWithValue("@uUserId", Convert.ToInt32("2"));
+                //dbAdapter = new MySqlDataAdapter();
+                //dbAdapter.SelectCommand = cmd;
+                //DataSet DS = new DataSet();
+                //dbAdapter.Fill(DS);
+                //con.Close();
+                if (Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        String sDate = "2019-08-29 06:00:00";
+                        if (item.BookingFrom == DateTime.Parse(sDate)) //WHEN CLICKED COLOR CHANGES TO ORANGE
+                        {
+                            <!--ROW 3-->
+                            <td style="background-color:#008000" onclick="javascript:this.style.background = '#FFA500';">
+                                <!--COL1-->
+                                <a href="#child0">&nbsp</a>
+                            </td>
+                        }
+                        //else if (item.BookingFrom != DateTime.Parse(sDate)) //AUTOMATICALLY GREEN
+                        //{
+                            //<td style="background-color:#008000">
+                                <!--COL1-->
+                               // <a href="#child0">&nbsp</a>
+                           // </td>
+                       // }
+                    }
+                }
+            }
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL2-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL3-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL4-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL5-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL6-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL7-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL8-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL9-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL10-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL11-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL12-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL13-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL14-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL15-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL16-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL17-->
+                <a href="#child0">&nbsp</a>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL18-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL19-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL20-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL21-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL22-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL23-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL24-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL25-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL26-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL27-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL28-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL29-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL30-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL31-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL32-->
+                <a href="#child0">&nbsp</a>
+            </td>
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL33-->
+                <a href="#child0">&nbsp</a>
+            </td>
         </tr>
         <tr>
-            <td>&nbsp</td>
+            <!--ROW 4-->
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL1-->
+                <a href="#child0">&nbsp</a>
+            </td>
         </tr>
         <tr>
-            <td>&nbsp</td>
+            <!--ROW 5-->
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <!--COL2-->
+                <a href="#child0">&nbsp</a>
+            </td>
         </tr>
         <tr>
-            <td>&nbsp</td>
+            <!--ROW 6-->
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <a href="#child0">&nbsp</a>
+            </td>
         </tr>
         <tr>
-            <td>&nbsp</td>
+            <!--ROW 7-->
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <a href="#child0">&nbsp</a>
+            </td>
         </tr>
         <tr>
-            <td>&nbsp</td>
+            <!--ROW 8-->
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <a href="#child0">&nbsp</a>
+            </td>
         </tr>
         <tr>
-            <td>&nbsp</td>
+            <!--ROW 9-->
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <a href="#child0">&nbsp</a>
+            </td>
         </tr>
         <tr>
-            <td>&nbsp</td>
+            <!--ROW 10-->
+            <td onclick="javascript:this.style.background = '#FF0000';">
+                <a href="#child0">&nbsp</a>
+            </td>
         </tr>
     </table>
 
-    <p>Date:<input type="date" name="BookingDate"></p>
-    <p><input type="button" name="bookBtn" value="Book"></p>
+    <form method="post">
+        <p>Date:<input type="date" name="BookingDate"></p>
+        <p><input type="button" name="bookBtn" value="Book"></p>
+    </form>
 </div>
 
 <p>Your booking:</p>

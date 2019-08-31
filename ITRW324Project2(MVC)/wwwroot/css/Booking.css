@@ -15,3 +15,8 @@ table {
     margin-left: 0px;
     margin-right: 0px;
 }
+
+td a {
+    display: block;
+    width: 100%;
+}
