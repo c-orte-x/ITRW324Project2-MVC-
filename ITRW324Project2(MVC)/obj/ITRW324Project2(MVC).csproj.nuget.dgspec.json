@@ -45,10 +45,6 @@
               "target": "Package",
               "version": "[6.2.0, )"
             },
-            "FontAwesome.MVC": {
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -59,6 +55,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.6, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",

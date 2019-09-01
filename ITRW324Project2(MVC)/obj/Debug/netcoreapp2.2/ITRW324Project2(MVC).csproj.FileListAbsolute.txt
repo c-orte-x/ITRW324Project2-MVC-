@@ -37,7 +37,6 @@ C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\bin\Debug\net
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\bin\Debug\netcoreapp2.2\ITRW324Project2(MVC).pdb
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\bin\Debug\netcoreapp2.2\ITRW324Project2(MVC).Views.dll
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\bin\Debug\netcoreapp2.2\ITRW324Project2(MVC).Views.pdb
-C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\ITRW324Project2(MVC).csprojAssemblyReference.cache
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\ITRW324Project2(MVC).csproj.CoreCompileInputs.cache
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\ITRW324Project2(MVC).RazorAssemblyInfo.cache
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\ITRW324Project2(MVC).RazorAssemblyInfo.cs
@@ -65,3 +64,4 @@ C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\net
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Home\AboutUs.g.cshtml.cs
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Home\Rates.g.cshtml.cs
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Home\ContactUs.g.cshtml.cs
+C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\ITRW324Project2(MVC).csprojAssemblyReference.cache
