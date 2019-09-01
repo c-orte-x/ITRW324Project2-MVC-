@@ -62,6 +62,11 @@ namespace ITRW324Project2_MVC_.Controllers
             return View();
         }
 
+        public IActionResult Rules() //Return Rules View
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
