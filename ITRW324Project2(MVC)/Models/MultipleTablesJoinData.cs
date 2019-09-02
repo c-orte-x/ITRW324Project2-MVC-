@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ITRW324Project2_MVC_.Models
+namespace Final.Models
 {
     public class MultipleTablesJoinData
     {

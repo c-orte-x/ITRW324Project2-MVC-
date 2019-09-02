@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ITRW324Project2_MVC_
+namespace Final
 {
     public partial class Booking
     {
@@ -16,6 +16,7 @@ namespace ITRW324Project2_MVC_
         public DateTime? BookingUntil { get; set; }
         public string BookingMadeBy { get; set; }
         public int? UserId { get; set; }
+        public int? CourtNr { get; set; }
 
         public virtual User User { get; set; }
         public virtual ICollection<BookedCourt> BookedCourt { get; set; }

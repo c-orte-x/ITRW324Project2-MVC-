@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ITRW324Project2_MVC_
+namespace Final
 {
     public partial class User
     {
