@@ -69,5 +69,8 @@ namespace ITRW324Project2_MVC_
                     template: "{controller=Home}/{action=DBExampleView}/{id?}"); //Route for linking Models,View, Controllers
             });
         }
+        static volatile public Boolean logged = false;
     }
-}
+    }
+
+   

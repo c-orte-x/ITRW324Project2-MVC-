@@ -1,7 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-
+    
+    @{ 
+        var log = 50;
+    }
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
@@ -62,8 +66,8 @@
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top">
-            <a asp-area="" asp-controller="Home" asp-action="Booking" class="navbar-sec-brand" style="float: right; margin-right: 15px">Log In</a>
-            <a asp-area="" asp-controller="Home" asp-action="AboutUs" class="navbar-sec-brand" style="float: right; position: relative">Register</a>
+            <a asp-area="" asp-controller="Home" asp-action="LogIn" class="navbar-sec-brand" style="float: right; margin-right: 15px; color: #777">Log In</a>
+            <a asp-area="" asp-controller="Home" asp-action="AboutUs" class="navbar-sec-brand" style="float: right; position: relative; color: #777">Register</a>
             <div class="container">
 
                 <div class="navbar-header">
@@ -100,18 +104,34 @@
         </script>
 
         @RenderBody()
-        <footer style="text-align: center">
-            <p>&copy; 2019 - Mittal Squash Club</p>
-            <div>
-                <a style="padding-right: 60px; position: relative" asp-controller="Home" asp-action="Rules">Rules</a>
-                <a style="padding-right: 60px; position: relative" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                <a style="padding-right: 60px; position: relative" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
-                <a style="padding-right: 60px; position: relative" asp-controller="Home" asp-action="Rates">Rates</a>
-                
-                <a style="position: relative" asp-area="" asp-controller="Home" asp-action="Booking" class="popup" onclick="popFunction()">Profile<span class="popuptext" id="myPopup">Please log in first</span></a>
-            </div>
+    <footer style="text-align: center">
+        <p>&copy; 2019 - Mittal Squash Club</p>
+        <div>
+            <a style="padding-right: 60px; position: relative; color: black" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+            <a style="padding-right: 60px; position: relative; color: black" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+            <a style="padding-right: 60px; position: relative; color: black" asp-controller="Home" asp-action="Rates">Rates</a>
+            <a style="padding-right: 60px; position: relative; color: black" asp-controller="Home" asp-action="Rules">Rules</a>
 
-        </footer>
+            <a style="position: relative; color: black" class="popup" onclick="popFunction()">
+                Profile<span class="popuptext" id="myPopup">Please log in first</span>
+            </a>
+
+        </div>
+    @*     
+    @if (log == 50)
+    {
+            <a style="position: relative" asp-area="" asp-controller="Home" asp-action="Booking">Profile</a>
+    }
+    else
+    {
+            <a style="position: relative" class="popup" onclick="popFunction()">
+                Profile<span class="popuptext" id="myPopup">Please log in first</span>
+            </a>
+    }
+    *@
+        
+
+    </footer>
 
 
     </div>

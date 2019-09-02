@@ -2,4 +2,29 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "Log In";
 }
+
+<h1>&nbsp</h1>
+
+<div style="padding: 15px; text-align: center">
+    <h1 style="text-align: center">
+        Log In
+    </h1>
+    <p style="font-size: 18px">
+        <h1>&nbsp</h1>
+        Hi, please log in here<br>
+        <h1>&nbsp</h1><h1>&nbsp</h1>
+    </p>
+    <button type="button" onclick="Logging()">Log In</button>
+</div>
+
+<script>
+    var log = new Boolean 
+    function Logging() {
+        logged = true;
+    }
+    @ITRW324Project2_MVC_.Startup.logged = log;
+</script>
+
+

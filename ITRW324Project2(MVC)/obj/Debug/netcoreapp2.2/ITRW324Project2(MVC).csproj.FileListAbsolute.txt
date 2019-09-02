@@ -66,3 +66,4 @@ C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\net
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Home\ContactUs.g.cshtml.cs
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\ITRW324Project2(MVC).csprojAssemblyReference.cache
 C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Home\Rules.g.cshtml.cs
+C:\Users\jeandre\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Home\LogIn.g.cshtml.cs
