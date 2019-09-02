@@ -854,7 +854,7 @@
     <p><input type="button" name="bookBtn" value="Book" id="btnBook"></p>
 </div>
 
-<!--{
+@{
     Boolean BookFunction(DateTime fromDate, DateTime toDate, String bookingBy, int userId, int courtNr)
     {
         MySqlConnection con;
@@ -865,11 +865,11 @@
         con.Open();
         MySqlCommand cmd = new MySqlCommand("insert_new_booking", con);
         cmd.CommandType = CommandType.StoredProcedure;
-        cmd.Parameters.AddWithValue("uBookingFrom", fromDate);
-        cmd.Parameters.AddWithValue("uBookingUntil", toDate);
-        cmd.Parameters.AddWithValue("uBookingMadeBy", bookingBy);
-        cmd.Parameters.AddWithValue("uUserId", userId);
-        cmd.Parameters.AddWithValue("uCourtNr", courtNr);
+        cmd.Parameters.AddWithValue("@uBookingFrom", fromDate);
+        cmd.Parameters.AddWithValue("@uBookingUntil", toDate);
+        cmd.Parameters.AddWithValue("@uBookingMadeBy", bookingBy);
+        cmd.Parameters.AddWithValue("@uUserId", userId);
+        cmd.Parameters.AddWithValue("@uCourtNr", courtNr);
         dbAdapter = new MySqlDataAdapter();
         dbAdapter.SelectCommand = cmd;
         DataSet DS = new DataSet();
@@ -878,13 +878,13 @@
         return true;
     }
 }
-section Scripts
+@section Scripts
 {
 <script>
 
-    function y(var id) { function f(event) { event.preventDefault(); var bookf = BookFunction(sTimeFrom, sTimeTil, sName, sUserID, sCourt) } }</script>
+    function y(var id) { function f(event) { event.preventDefault(); var bookf = @BookFunction(sTimeFrom, sTimeTil, sName, sUserID, sCourt) } }</script>
 }
-    -->
+    
 <p>Your booking:</p>
 
 <p>
