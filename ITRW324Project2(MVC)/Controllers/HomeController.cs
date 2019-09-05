@@ -61,6 +61,30 @@ namespace Final.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult ExecuteDataTableSqlDA()
+        {
+            MySqlConnection con;
+            MySqlDataAdapter dbAdapter;
+            string connectionString;
+            connectionString = "Server=den1.mysql6.gear.host;Database=ITRW324Project2;Uid=itrw324project2;Pwd=Hr0T3_Bxx-rj;";
+            con = new MySqlConnection(connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("insert_new_booking", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@uBookingFrom", new DateTime(2019/10/10 ));
+            cmd.Parameters.AddWithValue("@uBookingUntil", new DateTime(2019/10/11));
+            cmd.Parameters.AddWithValue("@uBookingMadeBy", "Paul");
+            cmd.Parameters.AddWithValue("@uUserId", 5);
+            cmd.Parameters.AddWithValue("@uCourtNr", 1);
+            dbAdapter = new MySqlDataAdapter();
+            dbAdapter.SelectCommand = cmd;
+            DataSet DS = new DataSet();
+            dbAdapter.Fill(DS);
+            con.Close();
+
+            return View("Index");
+        }
     }
     public static class StringExtensions
     {

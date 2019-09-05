@@ -7,12 +7,12 @@
     int sUserID = 5;
     int sCourt = 0;
 }
+
 @using MySql.Data.MySqlClient;
 @using Microsoft.EntityFrameworkCore;
 @using System.Data;
 
 <link href="~/css/Booking.css" rel="stylesheet" /> <!--References created booking css-->
-
 
 <div class="text-center">
     <!--CENTERS EVERYTHING-->
@@ -51,7 +51,7 @@
         </tr>
     </table>
 
-    <table style="width:90%">
+  <table style="width:90%">
         <tr>
             <!--1ST ROW-->
             <td colspan="34">
@@ -322,7 +322,7 @@
                     }
                     else if (count1 == 1)
                     {
-                        <td style="background-color:#008000" onclick="javascript: this.style.background = '#FFA500'; y();">
+                        <td style="background-color:#008000" onclick="javascript:this.style.background = '#FFA500';">
                             <!--COL2-->
                             <a href="#child0">&nbsp</a>
                         </td>
@@ -338,7 +338,7 @@
                     }
                     else if (count2 == 1)
                     {
-                        <td style="background-color:#008000" onclick="javascript: this.style.background = '#FFA500';">
+                        <td style="background-color:#008000" onclick="javascript:this.style.background = '#FFA500';">
                             <!--COL2-->
                             <a href="#child0">&nbsp</a>
                         </td>
@@ -849,50 +849,60 @@
 
 <p>&nbsp</p>
 
-<div class="text-center">
-    <p><input type="date" name="BookingDate"></p>
-    <p><input type="button" name="bookBtn" value="Book" id="btnBook"></p>
-</div>
+<form asp-controller="Home" asp-action="ExecuteDataTableSqlDA" method="post" class="form-horizontal" role="form">
+    <div class="form-horizontal">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="col-md-12">
 
-@{
-    Boolean BookFunction(DateTime fromDate, DateTime toDate, String bookingBy, int userId, int courtNr)
+            <!--<p><input type="date" name="BookingDate"></p>-->
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="ExecuteDataTableSqlDA" class="btn btn-default">
+        </div>
+    </div>
+</form>
+
+
+
+
+<!--{
+    functions
     {
-        MySqlConnection con;
-        MySqlDataAdapter dbAdapter;
-        string connectionString;
-        connectionString = "Server=den1.mysql6.gear.host;Database=ITRW324Project2;Uid=itrw324project2;Pwd=Hr0T3_Bxx-rj;";
-        con = new MySqlConnection(connectionString);
-        con.Open();
-        MySqlCommand cmd = new MySqlCommand("insert_new_booking", con);
-        cmd.CommandType = CommandType.StoredProcedure;
-        cmd.Parameters.AddWithValue("@uBookingFrom", fromDate);
-        cmd.Parameters.AddWithValue("@uBookingUntil", toDate);
-        cmd.Parameters.AddWithValue("@uBookingMadeBy", bookingBy);
-        cmd.Parameters.AddWithValue("@uUserId", userId);
-        cmd.Parameters.AddWithValue("@uCourtNr", courtNr);
-        dbAdapter = new MySqlDataAdapter();
-        dbAdapter.SelectCommand = cmd;
-        DataSet DS = new DataSet();
-        dbAdapter.Fill(DS);
-        con.Close();
-        return true;
-    }
-}
-@section Scripts
-{
-<script>
 
-    function y(var id) { function f(event) { event.preventDefault(); var bookf = @BookFunction(sTimeFrom, sTimeTil, sName, sUserID, sCourt) } }</script>
-}
-    
-<p>Your booking:</p>
+        Boolean BookFunction(DateTime fromDate, DateTime toDate, String bookingBy, int userId, int courtNr)
+        {
+            MySqlConnection con;
+            MySqlDataAdapter dbAdapter;
+            string connectionString;
+            connectionString = "Server=den1.mysql6.gear.host;Database=ITRW324Project2;Uid=itrw324project2;Pwd=Hr0T3_Bxx-rj;";
+            con = new MySqlConnection(connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("insert_new_booking", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("uBookingFrom", fromDate);
+            cmd.Parameters.AddWithValue("uBookingUntil", toDate);
+            cmd.Parameters.AddWithValue("uBookingMadeBy", bookingBy);
+            cmd.Parameters.AddWithValue("uUserId", userId);
+            cmd.Parameters.AddWithValue("uCourtNr", courtNr);
+            dbAdapter = new MySqlDataAdapter();
+            dbAdapter.SelectCommand = cmd;
+            DataSet DS = new DataSet();
+            dbAdapter.Fill(DS);
+            con.Close();
+            return true;
+        }
+    }
+}-->
 
 <p>
     Infomration on bookings:
     <ul>
-        <li>Members can only book up to 2 weeks in advance</li>
-        <li>etc</li>
-        <li>etc</li>
+        <li>Members can only book up to 2 weeks in advance.</li>
+        <li>Bookings will expire if the player does not check in within 10 minutes of their booked time.</li>
+        <li>Any bookings not honored must be paid in full and a warning is issued.</li>
+        <li>The club uses a strict honor system</li>
     </ul>
     <!--<table style="width:100%">
         <tr>
