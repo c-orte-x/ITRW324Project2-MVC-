@@ -5,7 +5,7 @@
     DateTime sTimeFrom = new DateTime();
     DateTime sTimeTil = new DateTime();
     int sUserID = 5;
-    int sCourt = 0;
+    int sCourt = 1;
 }
 
 @using MySql.Data.MySqlClient;
@@ -13,6 +13,7 @@
 @using System.Data;
 
 <link href="~/css/Booking.css" rel="stylesheet" /> <!--References created booking css-->
+
 
 <div class="text-center">
     <!--CENTERS EVERYTHING-->
@@ -51,11 +52,11 @@
         </tr>
     </table>
 
-  <table style="width:90%">
+    <table style="width:90%">
         <tr>
             <!--1ST ROW-->
             <td colspan="34">
-                <script>document.write(new Date().toLocaleDateString());</script>
+                <script>document.write(new Date().toLocaleDateString());</script> <!--Date changes every day-->
             </td>
         </tr> <!--Row1-->
         <tr>
@@ -137,7 +138,7 @@
                     String sDate31 = sDay + " 21:00:00";
                     String sDate32 = sDay + " 21:30:00";
                     String sDate33 = sDay + " 22:00:00";
-                    int count1 = 1;
+                    int count1 = 1; //IF COUNT 0: BOOKING FOUND ELSE COUNT 1: NO BOOKING
                     int count2 = 1;
                     int count3 = 1;
                     int count4 = 1;
@@ -322,8 +323,8 @@
                     }
                     else if (count1 == 1)
                     {
-                        <td style="background-color:#008000" onclick="javascript:this.style.background = '#FFA500';">
-                            <!--COL2-->
+                        <td style="background-color:#008000" onclick="javascript: this.style.background = '#FFA500';">
+                            <!--COL1-->
                             <a href="#child0">&nbsp</a>
                         </td>
                     }
@@ -849,11 +850,23 @@
 
 <p>&nbsp</p>
 
-<form asp-controller="Home" asp-action="ExecuteDataTableSqlDA" method="post" class="form-horizontal" role="form">
+@{ //ExecuteDataTableSqlDA paramters
+    var parms = new Dictionary<string, string>
+{
+        { "fromDate", sTimeFrom.ToString() },
+        { "toDate", sTimeTil.ToString() },
+        { "bookingBy", sName},
+        { "userId", sUserID.ToString()},
+        { "courtNr", sCourt.ToString()}
+    };
+}
+
+
+<form asp-controller="Home" asp-action="ExecuteDataTableSqlDA" asp-all-route-data="parms" method="post" class="form-horizontal" role="form">
+    <!--Calls ExecuteDataTableSqlDA From HomeController-->
     <div class="form-horizontal">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="col-md-12">
-
             <!--<p><input type="date" name="BookingDate"></p>-->
         </div>
     </div>
@@ -863,9 +876,6 @@
         </div>
     </div>
 </form>
-
-
-
 
 <!--{
     functions

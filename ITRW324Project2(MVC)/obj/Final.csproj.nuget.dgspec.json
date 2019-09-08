@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cortex\\Desktop\\Final\\Final.csproj": {}
+    "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cortex\\Desktop\\Final\\Final.csproj": {
+    "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cortex\\Desktop\\Final\\Final.csproj",
+        "projectUniqueName": "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
         "projectName": "Final",
-        "projectPath": "C:\\Users\\Cortex\\Desktop\\Final\\Final.csproj",
-        "packagesPath": "C:\\Users\\Cortex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cortex\\Desktop\\Final\\obj\\",
+        "projectPath": "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
+        "packagesPath": "C:\\Users\\wwwar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Cortex\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\wwwar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"

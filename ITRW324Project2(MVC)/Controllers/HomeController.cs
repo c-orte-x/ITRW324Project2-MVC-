@@ -62,29 +62,35 @@ namespace Final.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult ExecuteDataTableSqlDA()
+        public IActionResult ExecuteDataTableSqlDA(string fromDate, string toDate, string bookingBy, string userId, string courtNr) //Method for writing to database
         {
             MySqlConnection con;
             MySqlDataAdapter dbAdapter;
             string connectionString;
-            connectionString = "Server=den1.mysql6.gear.host;Database=ITRW324Project2;Uid=itrw324project2;Pwd=Hr0T3_Bxx-rj;";
+            connectionString = "Server=den1.mysql6.gear.host;Database=ITRW324Project2;Uid=itrw324project2;Pwd=Hr0T3_Bxx-rj;"; //Connection string
             con = new MySqlConnection(connectionString);
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("insert_new_booking", con);
+            MySqlCommand cmd = new MySqlCommand("insert_new_booking", con); //insert_new_booking is a stored procedure in the database
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@uBookingFrom", new DateTime(2019/10/10 ));
-            cmd.Parameters.AddWithValue("@uBookingUntil", new DateTime(2019/10/11));
-            cmd.Parameters.AddWithValue("@uBookingMadeBy", "Paul");
-            cmd.Parameters.AddWithValue("@uUserId", 5);
-            cmd.Parameters.AddWithValue("@uCourtNr", 1);
+            cmd.Parameters.AddWithValue("@uBookingFrom", Convert.ToDateTime(fromDate));
+            cmd.Parameters.AddWithValue("@uBookingUntil", Convert.ToDateTime(toDate));
+            cmd.Parameters.AddWithValue("@uBookingMadeBy", bookingBy);
+            cmd.Parameters.AddWithValue("@uUserId", Convert.ToInt32(userId));
+            cmd.Parameters.AddWithValue("@uCourtNr", Convert.ToInt32(courtNr));
             dbAdapter = new MySqlDataAdapter();
             dbAdapter.SelectCommand = cmd;
             DataSet DS = new DataSet();
             dbAdapter.Fill(DS);
             con.Close();
 
-            return View("Index");
+            return View("Index"); //Returns the view to the main page
         }
+
+        public int BtnClickedOn() //Method for writing to database
+        {
+            return 1;
+        }
+
     }
     public static class StringExtensions
     {
