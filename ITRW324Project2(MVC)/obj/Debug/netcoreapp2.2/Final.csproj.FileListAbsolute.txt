@@ -74,3 +74,4 @@ C:\Users\wwwar\Documents\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\net
 C:\Users\wwwar\Documents\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Final.dll
 C:\Users\wwwar\Documents\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Final.pdb
 C:\Users\wwwar\Documents\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Final.csproj.CopyComplete
+C:\Users\wwwar\Documents\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Home\ViewBooking.g.cshtml.cs
