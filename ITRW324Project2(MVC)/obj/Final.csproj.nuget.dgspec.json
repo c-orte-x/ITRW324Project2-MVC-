@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Hubert\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj": {}
   },
   "projects": {
@@ -12,12 +13,25 @@
         "projectPath": "C:\\Users\\Hubert\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
         "packagesPath": "C:\\Users\\Hubert\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Hubert\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
+=======
+    "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
+        "projectName": "Final",
+        "projectPath": "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
+        "packagesPath": "C:\\Users\\wwwar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
+>>>>>>> 85cd8d3f39dd90590c8d00a77c57b7890189a70b
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hubert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wwwar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

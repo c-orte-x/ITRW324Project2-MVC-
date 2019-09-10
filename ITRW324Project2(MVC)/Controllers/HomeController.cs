@@ -34,6 +34,12 @@ namespace Final.Controllers
             return View(result);
         }
 
+        public IActionResult ViewBooking() //ReturnViewBooking View
+        {
+            var result = _context.Booking.ToList();
+            return View(result);
+        }
+
         public IActionResult Rates() //Retrun Rates View
         {
             return View();

@@ -1,0 +1,881 @@
+﻿@model List<Final.Booking>
+@{
+    ViewData["Title"] = "Booking";
+}
+@using MySql.Data.MySqlClient;
+@using Microsoft.EntityFrameworkCore;
+@using System.Data;
+
+<link href="~/css/Booking.css" rel="stylesheet" /> <!--References created booking css-->
+
+
+<div class="text-center">
+    <!--CENTERS EVERYTHING-->
+    <h1 class="display-4">Bookings</h1> <!--DISPLAY SIZE 4-->
+
+    <table style="width:6%" id="table1">
+        <tr>
+            <td colspan="1">&nbsp</td>
+        </tr>
+        <tr>
+            <td colspan="1">Court</td>
+        </tr>
+        <tr>
+            <td colspan="1">1</td>
+        </tr>
+        <tr>
+            <td colspan="1">2</td>
+        </tr>
+        <tr>
+            <td colspan="1">3</td>
+        </tr>
+        <tr>
+            <td colspan="1">4</td>
+        </tr>
+        <tr>
+            <td colspan="1">5</td>
+        </tr>
+        <tr>
+            <td colspan="1">6</td>
+        </tr>
+        <tr>
+            <td colspan="1">7</td>
+        </tr>
+        <tr>
+            <td colspan="1">8</td>
+        </tr>
+    </table>
+
+    <table style="width:80%" id="table2">
+        <tr>
+            <!--1ST ROW-->
+            <td colspan="34">
+                <script>document.write(new Date().toLocaleDateString());</script>
+            </td>
+        </tr> <!--Row1-->
+        <tr>
+            <!--2ND ROW-->
+            <td>06:00</td>  <!--COLUMN 1-->
+            <td>06:30</td>  <!--COLUMN 2-->
+            <td>07:00</td>  <!--COLUMN 3-->
+            <td>07:30</td>  <!--COLUMN 4-->
+            <td>08:00</td>  <!--COLUMN 5-->
+            <td>08:30</td>  <!--COLUMN 6-->
+            <td>09:00</td>  <!--COLUMN 7-->
+            <td>09:30</td>  <!--COLUMN 8-->
+            <td>10:00</td>  <!--COLUMN 9-->
+            <td>10:30</td>  <!--COLUMN 10-->
+            <td>11:00</td>  <!--COLUMN 11-->
+            <td>11:30</td>  <!--COLUMN 12-->
+            <td>12:00</td>  <!--COLUMN 13-->
+            <td>12:30</td>  <!--COLUMN 14-->
+            <td>13:00</td>  <!--COLUMN 15-->
+            <td>13:30</td>  <!--COLUMN 16-->
+            <td>14:00</td>  <!--COLUMN 17-->
+            <td>14:30</td>  <!--COLUMN 18-->
+            <td>15:00</td>  <!--COLUMN 19-->
+            <td>15:30</td>  <!--COLUMN 20-->
+            <td>16:00</td>  <!--COLUMN 21-->
+            <td>16:30</td>  <!--COLUMN 22-->
+            <td>17:00</td>  <!--COLUMN 23-->
+            <td>17:30</td>  <!--COLUMN 24-->
+            <td>18:00</td>  <!--COLUMN 25-->
+            <td>18:30</td>  <!--COLUMN 26-->
+            <td>19:00</td>  <!--COLUMN 27-->
+            <td>19:30</td>  <!--COLUMN 28-->
+            <td>20:00</td>  <!--COLUMN 29-->
+            <td>20:30</td>  <!--COLUMN 30-->
+            <td>21:00</td>  <!--COLUMN 31-->
+            <td>21:30</td>  <!--COLUMN 32-->
+            <td>22:00</td>  <!--COLUMN 33-->
+        </tr>
+        @for (int i = 1; i <= 8; i++)
+        {
+            <tr>
+                <!--ROW3-->
+
+                @if (Model != null)
+                {
+                    DateTime dDay = DateTime.Today;
+                    String sDay = dDay.ToString("yyyy/MM/dd");
+
+                    String sDate1 = sDay + " 06:00:00"; //Dates for each cell will be compared to this variable
+                    String sDate2 = sDay + " 06:30:00";
+                    String sDate3 = sDay + " 07:00:00";
+                    String sDate4 = sDay + " 07:30:00";
+                    String sDate5 = sDay + " 08:00:00";
+                    String sDate6 = sDay + " 08:30:00";
+                    String sDate7 = sDay + " 09:00:00";
+                    String sDate8 = sDay + " 09:30:00";
+                    String sDate9 = sDay + " 10:00:00";
+                    String sDate10 = sDay + " 10:30:00";
+                    String sDate11 = sDay + " 11:00:00";
+                    String sDate12 = sDay + " 11:30:00";
+                    String sDate13 = sDay + " 12:00:00";
+                    String sDate14 = sDay + " 12:30:00";
+                    String sDate15 = sDay + " 13:00:00";
+                    String sDate16 = sDay + " 13:30:00";
+                    String sDate17 = sDay + " 14:00:00";
+                    String sDate18 = sDay + " 14:30:00";
+                    String sDate19 = sDay + " 15:00:00";
+                    String sDate20 = sDay + " 15:30:00";
+                    String sDate21 = sDay + " 16:00:00";
+                    String sDate22 = sDay + " 16:30:00";
+                    String sDate23 = sDay + " 17:00:00";
+                    String sDate24 = sDay + " 17:30:00";
+                    String sDate25 = sDay + " 18:00:00";
+                    String sDate26 = sDay + " 18:30:00";
+                    String sDate27 = sDay + " 19:00:00";
+                    String sDate28 = sDay + " 19:30:00";
+                    String sDate29 = sDay + " 20:00:00";
+                    String sDate30 = sDay + " 20:30:00";
+                    String sDate31 = sDay + " 21:00:00";
+                    String sDate32 = sDay + " 21:30:00";
+                    String sDate33 = sDay + " 22:00:00";
+                    int count1 = 1; //If count is 0 then a booking is found, else there are no bookings
+                    int count2 = 1;
+                    int count3 = 1;
+                    int count4 = 1;
+                    int count5 = 1;
+                    int count6 = 1;
+                    int count7 = 1;
+                    int count8 = 1;
+                    int count9 = 1;
+                    int count10 = 1;
+                    int count11 = 1;
+                    int count12 = 1;
+                    int count13 = 1;
+                    int count14 = 1;
+                    int count15 = 1;
+                    int count16 = 1;
+                    int count17 = 1;
+                    int count18 = 1;
+                    int count19 = 1;
+                    int count20 = 1;
+                    int count21 = 1;
+                    int count22 = 1;
+                    int count23 = 1;
+                    int count24 = 1;
+                    int count25 = 1;
+                    int count26 = 1;
+                    int count27 = 1;
+                    int count28 = 1;
+                    int count29 = 1;
+                    int count30 = 1;
+                    int count31 = 1;
+                    int count32 = 1;
+                    int count33 = 1;
+
+                    if (Model.Count() > 0)
+                    {
+
+                        foreach (var item in Model)
+                        {
+                            if (item.BookingFrom == DateTime.Parse(sDate1) && item.CourtNr == i) //BOOKING DETECTED AND CHANGES TO RED
+                            {
+                                count1 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate2) && item.CourtNr == i)
+                            {
+                                count2 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate3) && item.CourtNr == i)
+                            {
+                                count3 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate4) && item.CourtNr == i)
+                            {
+                                count4 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate5) && item.CourtNr == i)
+                            {
+                                count5 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate6) && item.CourtNr == i)
+                            {
+                                count6 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate7) && item.CourtNr == i)
+                            {
+                                count7 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate8) && item.CourtNr == i)
+                            {
+                                count8 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate9) && item.CourtNr == i)
+                            {
+                                count9 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate10) && item.CourtNr == i)
+                            {
+                                count10 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate11) && item.CourtNr == i)
+                            {
+                                count11 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate12) && item.CourtNr == i)
+                            {
+                                count12 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate13) && item.CourtNr == i)
+                            {
+                                count13 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate14) && item.CourtNr == i)
+                            {
+                                count14 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate15) && item.CourtNr == i)
+                            {
+                                count15 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate16) && item.CourtNr == i)
+                            {
+                                count16 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate17) && item.CourtNr == i)
+                            {
+                                count17 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate18) && item.CourtNr == i)
+                            {
+                                count18 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate19) && item.CourtNr == i)
+                            {
+                                count19 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate20) && item.CourtNr == i)
+                            {
+                                count20 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate21) && item.CourtNr == i)
+                            {
+                                count21 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate22) && item.CourtNr == i)
+                            {
+                                count22 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate23) && item.CourtNr == i)
+                            {
+                                count23 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate24) && item.CourtNr == i)
+                            {
+                                count24 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate25) && item.CourtNr == i)
+                            {
+                                count25 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate26) && item.CourtNr == i)
+                            {
+                                count26 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate27) && item.CourtNr == i)
+                            {
+                                count27 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate28) && item.CourtNr == i)
+                            {
+                                count28 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate29) && item.CourtNr == i)
+                            {
+                                count29 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate30) && item.CourtNr == i)
+                            {
+                                count30 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate31) && item.CourtNr == i)
+                            {
+                                count31 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate32) && item.CourtNr == i)
+                            {
+                                count32 = 0;
+                            }
+                            if (item.BookingFrom == DateTime.Parse(sDate33) && item.CourtNr == i)
+                            {
+                                count33 = 0;
+                            }
+                        }
+                    }
+
+
+                    if (count1 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL1-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count1 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL2-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count2 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL2-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count2 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL2-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count3 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL3-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count3 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL3-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count4 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL4-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count4 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL4-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count5 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL5-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count5 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL5-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count6 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL6-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count6 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL6-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count7 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL7-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count7 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL7-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count8 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL8-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count8 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL8-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count9 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL9-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count9 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL9-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count10 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL10-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count10 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL10-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count11 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL11-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count11 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL11-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count12 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL12-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count12 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL12-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count13 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL13-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count13 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL13-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count14 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL14-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count14 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL14-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count15 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL15-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count15 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL15-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count16 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL16-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count16 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL16-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count17 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL17-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count17 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL17-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count18 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL18-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count18 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL18-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count19 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL19-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count19 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL19-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count20 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL20-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count20 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL20-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count21 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL21-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count21 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL21-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count22 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL22-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count22 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL22-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count23 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL23-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count23 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL23-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count24 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL24-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count24 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL24-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count25 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL25-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count25 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL25-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count26 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL26-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count26 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL26-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count27 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL27-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count27 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL27-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count28 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL28-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count28 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL28-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count29 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL29-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count29 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL29-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count30 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL30-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count30 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL30-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count31 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL31-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count31 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL31-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count32 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL32-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count32 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL32-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+
+                    if (count33 == 0)
+                    {
+                        <!--ROW 3-->
+                        <td style="background-color:#FF0000">
+                            <!--COL33-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                    else if (count33 == 1)
+                    {
+                        <td style="background-color:#008000">
+                            <!--COL33-->
+                            <a href="#child0">&nbsp</a>
+                        </td>
+                    }
+                }
+
+            </tr>
+        }
+
+    </table>
+</div>
+
+<form asp-controller="Home" asp-action="ExecuteDataTableSqlDA" method="post" class="form-horizontal" role="form">
+    <div class="form-horizontal">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="col-md-12">
+
+            <!--<p><input type="date" name="BookingDate"></p>-->
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <!--<input type="submit" value="ExecuteDataTableSqlDA" class="btn btn-default">-->
+        </div>
+    </div>
+</form>
+
+<div>
+    <p>
+        Information on bookings:
+        <ul>
+            <li>Members can only book up to 2 weeks in advance.</li>
+            <li>Bookings will expire if the player does not check in within 10 minutes of their booked time.</li>
+            <li>Any bookings not honored must be paid in full and a warning is issued.</li>
+            <li>The club uses a strict honor system</li>
+        </ul>
+        <!--<table style="width:100%">
+            <tr>
+                <th>Booking Information</th>
+            </tr>
+            <tr>
+                <td>-Members can only book up to 2 weeks in advance<td>
+            </tr>
+            <tr>
+                <td>-Etc. Etc. Etc.</td>
+            </tr>
+        </table>-->
+    </p>
+</div>
