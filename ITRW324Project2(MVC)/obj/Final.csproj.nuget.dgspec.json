@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hubert\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj": {}
+    "C:\\Users\\Hubert\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hubert\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj": {
+    "C:\\Users\\Hubert\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hubert\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
+        "projectUniqueName": "C:\\Users\\Hubert\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
         "projectName": "Final",
-        "projectPath": "C:\\Users\\Hubert\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
+        "projectPath": "C:\\Users\\Hubert\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
         "packagesPath": "C:\\Users\\Hubert\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hubert\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
+        "outputPath": "C:\\Users\\Hubert\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -227,6 +227,16 @@ namespace Final.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
+                    string ctoken = _userManager.GenerateEmailConfirmationTokenAsync(user).Result;
+                    string ctokenlink = Url.Action("ConfirmEmail", "Account", new
+                    {
+                        user = user.Id,
+                        token = ctoken
+
+                    }, protocol: HttpContext.Request.Scheme);
+                    ViewBag.token = ctokenlink;
+                        
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -334,9 +344,9 @@ namespace Final.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
-            if (userId == null || code == null)
+            if (userId == null || token == null)
             {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
@@ -345,7 +355,7 @@ namespace Final.Controllers
             {
                 throw new ApplicationException($"Unable to load user with ID '{userId}'.");
             }
-            var result = await _userManager.ConfirmEmailAsync(user, code);
+            var result = await _userManager.ConfirmEmailAsync(user, token);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
