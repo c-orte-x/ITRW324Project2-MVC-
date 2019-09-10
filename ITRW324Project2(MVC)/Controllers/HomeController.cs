@@ -11,6 +11,7 @@ using Final.Models;
 
 namespace Final.Controllers
 {
+    
     public class HomeController : Controller
     {
         private ITRW324Project2Context _context;
@@ -20,18 +21,13 @@ namespace Final.Controllers
             _context = context;
         }
 
+
         public IActionResult Privacy() //Retrun Privacy View
         {
             return View();
         }
 
         public IActionResult Booking() //Return Booking View
-        {
-            var result = _context.Booking.ToList();
-            return View(result);
-        }
-
-        public IActionResult ViewBooking() //ReturnViewBooking View
         {
             var result = _context.Booking.ToList();
             return View(result);
@@ -67,7 +63,7 @@ namespace Final.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
+        
         public IActionResult ExecuteDataTableSqlDA(string fromDate, string toDate, string bookingBy, string userId, string courtNr) //Method for writing to database
         {
             MySqlConnection con;
@@ -96,6 +92,7 @@ namespace Final.Controllers
         {
             return 1;
         }
+        
 
     }
     public static class StringExtensions

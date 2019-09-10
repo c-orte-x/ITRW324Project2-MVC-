@@ -13783,23 +13783,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wwwar\\.nuget\\packages\\": {},
+    "C:\\Users\\Hubert\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
+      "projectUniqueName": "C:\\Users\\Hubert\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
       "projectName": "Final",
-      "projectPath": "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
-      "packagesPath": "C:\\Users\\wwwar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wwwar\\Documents\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
+      "projectPath": "C:\\Users\\Hubert\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\Final.csproj",
+      "packagesPath": "C:\\Users\\Hubert\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hubert\\Desktop\\ITRW324Project2-MVC-\\ITRW324Project2(MVC)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\wwwar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hubert\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

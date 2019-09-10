@@ -1,8 +1,4 @@
 ﻿<!DOCTYPE html>
-@using Microsoft.AspNetCore.Identity <!--Used for signInManager-->
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
-
 <html>
 <head>
     <meta charset="utf-8" />
@@ -68,6 +64,7 @@
 </head>
 
 <body>
+    
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top">
             <partial name="_LoginPartial" />
@@ -89,12 +86,18 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        @if (SignInManager.IsSignedIn(User)) //If user is signed in then bookings can be made
-                        {
-                            <li><a asp-area="" asp-controller="Home" asp-action="Booking">Make Bookings</a></li>
-                            <li><a asp-area="" asp-controller="Home" asp-action="Privacy">My Bookings</a></li>
-                        }
-                        <li><a asp-area="" asp-controller="Home" asp-action="ViewBooking">View Booking Times</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Booking">Make Bookings</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Privacy">My Bookings</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="DBExampleView">View Booking Times</a></li>
+                        <li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a asp-area="" asp-controller="Admin" asp-action="Index">Admin Page</a>
+                                }
+                            }
+                        </li>
                     </ul>
                 </div>
 
