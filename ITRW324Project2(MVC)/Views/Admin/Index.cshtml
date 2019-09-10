@@ -1,5 +1,4 @@
-﻿
-@model List<Final.Booking>
+﻿@model List<Final.Booking>
 @{
     ViewData["Title"] = "Booking";
     var sName = "Paul";
@@ -13,7 +12,7 @@
 @using System.Data;
 
 <link href="~/css/Booking.css" rel="stylesheet" /> <!--References created booking css-->
-
+<!--Dictionaries are used for parameter values-->
 @{ //ExecuteDataTableSqlDA paramters for row 3
     var parms1 = new Dictionary<string, string>
 {
@@ -7737,7 +7736,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="ExecuteDataTableSqlDA" class="btn btn-default">
+            <!--<input type="submit" value="ExecuteDataTableSqlDA" class="btn btn-default">-->
         </div>
     </div>
 </form>
@@ -7776,7 +7775,7 @@
 }-->
 
 <p>
-    Infomration on bookings:
+    Information on bookings:
     <ul>
         <li>Members can only book up to 2 weeks in advance.</li>
         <li>Bookings will expire if the player does not check in within 10 minutes of their booked time.</li>
@@ -7794,14 +7793,4 @@
             <td>-Etc. Etc. Etc.</td>
         </tr>
     </table>-->
-</p>
-
-@{
-    ViewData["Title"] = "Admin Page";
-}
-<p style="font-size: 18px">
-    <h2>Admin Page</h2>
-    <h4>
-        Welcome to the admin page!
-    </h4>
 </p>
