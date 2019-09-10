@@ -71,12 +71,11 @@
 <body>
 
     <div id="wrapper">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <partial name="_LoginPartial" />
-
+        <nav class="navbar navbar-default navbar-fixed-top" style="background-color: rgba(139, 8, 1, 0.95)">
+            
             <div class="container">
-
-                <div class="navbar-header">
+                <partial name="_LoginPartial" />
+                <div class="navbar-header" style="padding-right:0px; max-width: 400px; overflow-wrap: unset">
 
                     <button type="button" class="navbar-toggle" style="float: left; margin-left: 15px" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -84,7 +83,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MSC Bookings</a>
+                    <a style="color: #D1CFC1" asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MSC Bookings</a>
 
                 </div>
 
@@ -92,15 +91,15 @@
                     <ul class="nav navbar-nav">
                         @if (SignInManager.IsSignedIn(User)) //If user is signed in then bookings can be made
                         {
-                            <li><a asp-area="" asp-controller="Home" asp-action="Booking">Make Bookings</a></li>
+                            <li><a style="color: #D1CFC1" asp-area="" asp-controller="Home" asp-action="Booking">Make Bookings</a></li>
                         }
-                        <li><a asp-area="" asp-controller="Home" asp-action="ViewBooking">View Booking Times</a></li>
+                        <li><a style="color: #D1CFC1" asp-area="" asp-controller="Home" asp-action="ViewBooking">View Booking Times</a></li>
                         <li>
                             @if (User.Identity.IsAuthenticated)
                             {
                                 @if (User.IsInRole("Admin"))
                                 {
-                                    <a asp-area="" asp-controller="Admin" asp-action="Index">Admin Page</a>
+                                    <a style="color:#D1CFC1" asp-area="" asp-controller="Admin" asp-action="Index">Admin Page</a>
                                 }
                             }
                         </li>
@@ -121,13 +120,13 @@
         </script>
 
         @RenderBody()
-        <footer style="text-align: center">
-            <p>&copy; 2019 - Mittal Squash Club</p>
+        <footer style="text-align: center; background-color: rgba(139, 8, 1, 0.95)">
+            <p style="color: #D1CFC1">&copy; 2019 - Mittal Squash Club</p>
             <div>
-                <a style="padding-right: 60px; position: relative; color: black" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                <a style="padding-right: 60px; position: relative; color: black" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
-                <a style="padding-right: 60px; position: relative; color: black" asp-controller="Home" asp-action="Rates">Rates</a>
-                <a style="padding-right: 60px; position: relative; color: black" asp-controller="Home" asp-action="Rules">Rules</a>
+                <a style="padding-right: 60px; position: relative; color: #D1CFC1" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                <a style="padding-right: 60px; position: relative; color: #D1CFC1" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                <a style="padding-right: 60px; position: relative; color: #D1CFC1" asp-controller="Home" asp-action="Rates">Rates</a>
+                <a style="position: relative; color: #D1CFC1" asp-controller="Home" asp-action="Rules">Rules</a>
 
 
             </div>
