@@ -205,6 +205,7 @@ C:\Users\Hubert\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netc
 C:\Users\Hubert\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Final.pdb
 C:\Users\Hubert\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Final.csproj.CopyComplete
 C:\Users\Hubert\Desktop\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Index.g.cshtml.cs
+<<<<<<< HEAD
 C:\Users\wwwar\Downloads\ITRW324Project2-MVC--master\ITRW324Project2(MVC)\bin\Debug\netcoreapp2.2\Final.deps.json
 C:\Users\wwwar\Downloads\ITRW324Project2-MVC--master\ITRW324Project2(MVC)\bin\Debug\netcoreapp2.2\Final.runtimeconfig.json
 C:\Users\wwwar\Downloads\ITRW324Project2-MVC--master\ITRW324Project2(MVC)\bin\Debug\netcoreapp2.2\Final.runtimeconfig.dev.json
@@ -301,3 +302,5 @@ C:\Users\wwwar\Documents\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\net
 C:\Users\wwwar\Documents\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Manage\_ManageNav.g.cshtml.cs
 C:\Users\wwwar\Documents\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Manage\_StatusMessage.g.cshtml.cs
 C:\Users\wwwar\Documents\ITRW324Project2-MVC-\ITRW324Project2(MVC)\obj\Debug\netcoreapp2.2\Razor\Views\Manage\_ViewImports.g.cshtml.cs
+=======
+>>>>>>> 88bce06099295c0e6bcfd1a1efde4243150f5ba2
