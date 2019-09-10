@@ -12,7 +12,7 @@
 @using System.Data;
 
 <link href="~/css/Booking.css" rel="stylesheet" /> <!--References created booking css-->
-
+<!--Dictionaries are used for parameter values-->
 @{ //ExecuteDataTableSqlDA paramters for row 3
     var parms1 = new Dictionary<string, string>
 {
@@ -2596,7 +2596,8 @@
             <!--CENTERS EVERYTHING-->
             <h1 class="display-4">Bookings</h1> <!--DISPLAY SIZE 4-->
 
-            <table style="width:6%" id="table1"> <!--Table with court numbers-->
+            <table style="width:6%" id="table1">
+                <!--Table with court numbers-->
                 <tr>
                     <td colspan="1">&nbsp</td>
                 </tr>
@@ -2629,7 +2630,8 @@
                 </tr>
             </table>
 
-            <table style="width:80%" id="table2"> <!--Table with bookings-->
+            <table style="width:80%" id="table2">
+                <!--Table with bookings-->
                 <tr>
                     <!--1ST ROW-->
                     <td colspan="34">
@@ -7773,7 +7775,7 @@
 }-->
 
 <p>
-    Infomration on bookings:
+    Information on bookings:
     <ul>
         <li>Members can only book up to 2 weeks in advance.</li>
         <li>Bookings will expire if the player does not check in within 10 minutes of their booked time.</li>

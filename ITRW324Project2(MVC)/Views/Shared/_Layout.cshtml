@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
-@using Microsoft.AspNetCore.Identity <!--Used for signInManager-->
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+
 
         .popup {
             position: relative;
@@ -68,6 +69,7 @@
 </head>
 
 <body>
+
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top">
             <partial name="_LoginPartial" />
@@ -82,7 +84,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
                     <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MSC Bookings</a>
 
                 </div>
@@ -92,9 +93,17 @@
                         @if (SignInManager.IsSignedIn(User)) //If user is signed in then bookings can be made
                         {
                             <li><a asp-area="" asp-controller="Home" asp-action="Booking">Make Bookings</a></li>
-                            <li><a asp-area="" asp-controller="Home" asp-action="Privacy">My Bookings</a></li>
                         }
                         <li><a asp-area="" asp-controller="Home" asp-action="ViewBooking">View Booking Times</a></li>
+                        <li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a asp-area="" asp-controller="Admin" asp-action="Index">Admin Page</a>
+                                }
+                            }
+                        </li>
                     </ul>
                 </div>
 
@@ -120,9 +129,6 @@
                 <a style="padding-right: 60px; position: relative; color: black" asp-controller="Home" asp-action="Rates">Rates</a>
                 <a style="padding-right: 60px; position: relative; color: black" asp-controller="Home" asp-action="Rules">Rules</a>
 
-                <a style="position: relative; color: black" class="popup" onclick="popFunction()">
-                    Profile<span class="popuptext" id="myPopup">Please log in first</span>
-                </a>
 
             </div>
             @*

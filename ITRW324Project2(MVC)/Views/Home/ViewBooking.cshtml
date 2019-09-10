@@ -99,7 +99,7 @@
                     DateTime dDay = DateTime.Today;
                     String sDay = dDay.ToString("yyyy/MM/dd");
 
-                    String sDate1 = sDay + " 06:00:00";
+                    String sDate1 = sDay + " 06:00:00"; //Dates for each cell will be compared to this variable
                     String sDate2 = sDay + " 06:30:00";
                     String sDate3 = sDay + " 07:00:00";
                     String sDate4 = sDay + " 07:30:00";
@@ -132,7 +132,7 @@
                     String sDate31 = sDay + " 21:00:00";
                     String sDate32 = sDay + " 21:30:00";
                     String sDate33 = sDay + " 22:00:00";
-                    int count1 = 1;
+                    int count1 = 1; //If count is 0 then a booking is found, else there are no bookings
                     int count2 = 1;
                     int count3 = 1;
                     int count4 = 1;
@@ -859,7 +859,7 @@
 
 <div>
     <p>
-        Infomration on bookings:
+        Information on bookings:
         <ul>
             <li>Members can only book up to 2 weeks in advance.</li>
             <li>Bookings will expire if the player does not check in within 10 minutes of their booked time.</li>
